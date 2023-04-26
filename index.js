@@ -10,11 +10,11 @@ const PORT = process.env.PORT || 8086;
 //uri = "mongodb://127.0.0.1:27017/testdb";
 uri ="mongodb+srv://princechauhan1424:mXnsFEIIzjxZU10M@princeapi.du4gbh7.mongodb.net/testdb";
 //link from where we can send request to database
-    app.use(cors(
-        {
-        origin: "http://localhost:4200"
-        }
-    ));
+    // app.use(cors(
+    //     {
+    //     origin: "http://localhost:4200"
+    //     }
+    // ));
 
     //database connection
 mongoose.connect(uri)
@@ -34,6 +34,6 @@ mongoose.connect(uri)
 //     }
 // });
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(routes);
