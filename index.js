@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 var routes = require('./routes/routes');
 //const port = 8086;
-
+const PORT = process.env.PORT || 8086;
 //database link
 //uri = "mongodb://127.0.0.1:27017/testdb";
 uri ="mongodb+srv://princechauhan1424:mXnsFEIIzjxZU10M@princeapi.du4gbh7.mongodb.net/testdb";
@@ -21,16 +21,18 @@ mongoose.connect(uri)
   .then(() => console.log('Database Connected!'));
 
   //listen port
-app.listen(8086, function port(error){
-    if(error)
-    {
-        console.log(error);
-    }
-    else
-    {
-        console.log("Port Connected.");
-    }
-});
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  
+// app.listen(8086, function port(error){
+//     if(error)
+//     {
+//         console.log(error);
+//     }
+//     else
+//     {
+//         console.log("Port Connected.");
+//     }
+// });
 
 //app.use(cors());
 app.use(express.json());
